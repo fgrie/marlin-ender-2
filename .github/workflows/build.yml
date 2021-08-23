@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MARLIN_VERSION: 2.0.9.1
-      MARLIN_BRANCH: tag/${{MARLIN_VERSION}}
+      MARLIN_BRANCH: tag/${{env.MARLIN_VERSION}}
 
     steps:
     - name: Checkout Marlin repo
