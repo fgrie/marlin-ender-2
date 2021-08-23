@@ -16,16 +16,16 @@ on:
 jobs:
   build_firmware:
     name: Build Marlin firmware
-
     runs-on: ubuntu-latest
+    env:
+      MARLIN_BRANCH: tag/2.0.9.1
 
     steps:
-
     - name: Checkout Marlin repo
       uses: actions/checkout@v2
       with:
         repository: MarlinFirmware/Marlin
-        path: tag/2.0.9.1
+        path: ${env.MARLIN_BRANCH}
     
     - name: Debug output of folder structure
       run: |
