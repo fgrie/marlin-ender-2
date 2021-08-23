@@ -26,20 +26,25 @@ jobs:
       with:
         repository: MarlinFirmware/Marlin
         path: tag/2.0.9.1
-
-    - name: Select Python 3.7
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.7'
-        architecture: 'x64'
-
-    - name: Install PlatformIO
+    
+    - name: Debug output of folder structure
       run: |
-        pip install platformio
-        platformio update
+        sudo apt install tree
+        tree -d
 
-    - name: Enable buildroot commands
-      run: |
-        chmod +x "${GITHUB_WORKSPACE}/buildroot/bin/*"
-        echo "${GITHUB_WORKSPACE}/buildroot/bin" >> $PATH
+#    - name: Select Python 3.7
+#      uses: actions/setup-python@v2
+#      with:
+#        python-version: '3.7'
+#        architecture: 'x64'
+
+#    - name: Install PlatformIO
+#      run: |
+#        pip install platformio
+#        platformio update
+
+#    - name: Enable buildroot commands
+#      run: |
+#        chmod +x "${GITHUB_WORKSPACE}/buildroot/bin/*"
+#        echo "${GITHUB_WORKSPACE}/buildroot/bin" >> $PATH
 
