@@ -32,6 +32,11 @@ jobs:
         sudo apt install tree
         tree -d
 
+    - name: Enable buildroot commands
+      run: |
+        chmod +x "${GITHUB_WORKSPACE}/${env.MARLIN_BRANCH}/buildroot/bin/*"
+        echo "${GITHUB_WORKSPACE}/${env.MARLIN_BRANCH}/buildroot/bin" >> $PATH
+
 #    - name: Select Python 3.7
 #      uses: actions/setup-python@v2
 #      with:
@@ -42,9 +47,4 @@ jobs:
 #      run: |
 #        pip install platformio
 #        platformio update
-
-#    - name: Enable buildroot commands
-#      run: |
-#        chmod +x "${GITHUB_WORKSPACE}/buildroot/bin/*"
-#        echo "${GITHUB_WORKSPACE}/buildroot/bin" >> $PATH
 
