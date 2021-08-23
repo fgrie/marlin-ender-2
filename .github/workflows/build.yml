@@ -34,8 +34,8 @@ jobs:
 
     - name: Enable buildroot commands
       run: |
-        chmod +x "${GITHUB_WORKSPACE}/${env.MARLIN_BRANCH}/buildroot/bin/*"
-        echo "${GITHUB_WORKSPACE}/${env.MARLIN_BRANCH}/buildroot/bin" >> $PATH
+        chmod +x "${GITHUB_WORKSPACE}/${MARLIN_BRANCH}/buildroot/bin/*"
+        echo "${GITHUB_WORKSPACE}/${MARLIN_BRANCH}/buildroot/bin" >> $PATH
 
 #    - name: Select Python 3.7
 #      uses: actions/setup-python@v2
