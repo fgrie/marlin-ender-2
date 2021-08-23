@@ -29,8 +29,7 @@ jobs:
     
     - name: Debug output of folder structure
       run: |
-        sudo apt install tree
-        tree -d
+        tree -d ${GITHUB_WORKSPACE}
 
     - name: Enable buildroot commands
       run: |
