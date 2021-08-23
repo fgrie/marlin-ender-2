@@ -20,7 +20,7 @@ jobs:
     name: Build Marlin firmware
     runs-on: ubuntu-latest
     env:
-      MARLIN_BRANCH: tag/${{env.MARLIN_VERSION}}
+      MARLIN_BRANCH: tag/${MARLIN_VERSION}
 
     steps:
     - name: Checkout Marlin repo
