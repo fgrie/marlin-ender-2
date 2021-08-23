@@ -25,7 +25,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: MarlinFirmware/Marlin
-        path: ${env.MARLIN_BRANCH}
+        path: ${MARLIN_BRANCH}
     
     - name: Debug output of folder structure
       run: |
