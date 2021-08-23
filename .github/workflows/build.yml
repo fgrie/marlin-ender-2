@@ -18,7 +18,8 @@ jobs:
     name: Build Marlin firmware
     runs-on: ubuntu-latest
     env:
-      MARLIN_BRANCH: tag/2.0.9.1
+      MARLIN_VERSION: 2.0.9.1
+      MARLIN_BRANCH: tag/${{env.MARLIN_VERSION}}
 
     steps:
     - name: Checkout Marlin repo
@@ -46,4 +47,13 @@ jobs:
       run: |
         pip install platformio
         platformio update
+
+    - name: Install PlatformIO
+      run: |
+        pip install platformio
+        platformio update
+
+    - name: Configure build
+      run: |
+        use_example_configs Creality/Ender-2
 
