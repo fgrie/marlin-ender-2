@@ -32,9 +32,10 @@ jobs:
         tree -d ${GITHUB_WORKSPACE}
 
     - name: Enable buildroot commands
+      env:
+        BUILDROOT_BIN: ${{ env.GITHUB_WORKSPACE }}/tag/${{ env.MARLIN_VERSION }}/buildroot/bin
       run: |
-        chmod +x ${GITHUB_WORKSPACE}/tag/${MARLIN_VERSION}/buildroot/bin/*
-        export PATH=${GITHUB_WORKSPACE}/tag/${MARLIN_VERSION}/buildroot/bin:$PATH
+        chmod +x ${BUILDROOT_BIN}/*
 
     - name: Select Python 3.7
       uses: actions/setup-python@v2
