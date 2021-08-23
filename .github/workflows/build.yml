@@ -38,3 +38,8 @@ jobs:
         pip install platformio
         platformio update
 
+    - name: Enable buildroot commands
+      run: |
+        chmod +x "${GITHUB_WORKSPACE}/buildroot/bin*"
+        echo "${GITHUB_WORKSPACE}/buildroot/bin" >> $PATH
+
