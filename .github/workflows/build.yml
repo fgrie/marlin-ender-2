@@ -19,14 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MARLIN_VERSION: 2.0.9.1
-      MARLIN_BRANCH: tag/${{env.MARLIN_VERSION}}
+      MARLIN_BRANCH: tag/${MARLIN_VERSION}
 
     steps:
     - name: Checkout Marlin repo
       uses: actions/checkout@v2
       with:
         repository: MarlinFirmware/Marlin
-        path: ${{env.MARLIN_BRANCH}}
+        path: ${env.MARLIN_BRANCH}}
     
     - name: Debug output of folder structure
       run: |
