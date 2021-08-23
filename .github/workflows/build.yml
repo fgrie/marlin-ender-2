@@ -36,14 +36,14 @@ jobs:
         chmod +x ${GITHUB_WORKSPACE}/${MARLIN_BRANCH}/buildroot/bin/*
         export PATH=${GITHUB_WORKSPACE}/${MARLIN_BRANCH}/buildroot/bin:$PATH
 
-#    - name: Select Python 3.7
-#      uses: actions/setup-python@v2
-#      with:
-#        python-version: '3.7'
-#        architecture: 'x64'
+    - name: Select Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+        architecture: 'x64'
 
-#    - name: Install PlatformIO
-#      run: |
-#        pip install platformio
-#        platformio update
+    - name: Install PlatformIO
+      run: |
+        pip install platformio
+        platformio update
 
