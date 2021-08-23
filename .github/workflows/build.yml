@@ -19,15 +19,13 @@ jobs:
   build_firmware:
     name: Build Marlin firmware
     runs-on: ubuntu-latest
-    env:
-      MARLIN_BRANCH: tag/${{env.MARLIN_VERSION}}
 
     steps:
     - name: Checkout Marlin repo
       uses: actions/checkout@v2
       with:
         repository: MarlinFirmware/Marlin
-        path: ${{env.MARLIN_BRANCH}}
+        path: tag/${{ env.MARLIN_VERSION }}
     
     - name: Debug output of folder structure
       run: |
@@ -35,8 +33,8 @@ jobs:
 
     - name: Enable buildroot commands
       run: |
-        chmod +x ${GITHUB_WORKSPACE}/${MARLIN_BRANCH}/buildroot/bin/*
-        export PATH=${GITHUB_WORKSPACE}/${MARLIN_BRANCH}/buildroot/bin:$PATH
+        chmod +x ${GITHUB_WORKSPACE}/tag/${MARLIN_VERSION}/buildroot/bin/*
+        export PATH=${GITHUB_WORKSPACE}/tag/${MARLIN_VERSION}/buildroot/bin:$PATH
 
     - name: Select Python 3.7
       uses: actions/setup-python@v2
