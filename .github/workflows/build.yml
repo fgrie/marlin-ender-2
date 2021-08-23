@@ -40,6 +40,6 @@ jobs:
 
     - name: Enable buildroot commands
       run: |
-        chmod +x "${GITHUB_WORKSPACE}/buildroot/bin*"
+        chmod +x "${GITHUB_WORKSPACE}/buildroot/bin/*"
         echo "${GITHUB_WORKSPACE}/buildroot/bin" >> $PATH
 
