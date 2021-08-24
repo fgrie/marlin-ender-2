@@ -64,4 +64,5 @@ jobs:
     
     - name: Build
       run: |
-       	platformio run -e ${TARGET_ENV}
+        platformio run -e ${TARGET_ENV}
+        
