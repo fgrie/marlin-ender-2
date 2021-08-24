@@ -33,7 +33,7 @@ jobs:
 
     - name: Enable buildroot commands
       env:
-        BUILDROOT_BIN: ${{ env.GITHUB_WORKSPACE }}/tag/${{ env.MARLIN_VERSION }}/buildroot/bin
+        BUILDROOT_BIN: "${{ github.workspace }}/tag/${{ env.MARLIN_VERSION }}/buildroot/bin"
       run: |
         chmod +x ${BUILDROOT_BIN}/*
 
