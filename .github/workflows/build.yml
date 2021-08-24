@@ -2,8 +2,10 @@
 
 name: CI
 env:
-  MARLIN_VERSION: 2.0.9.1
-
+  MARLIN_VERSION: "2.0.9.1"
+  PRINTER_MODEL: "Creality/Ender-2"
+  TARGET_ENV: "melzi_optiboot_optimized"
+  
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -58,5 +60,8 @@ jobs:
       run: |
         cd "${GITHUB_WORKSPACE}/tag/${MARLIN_VERSION}"
         # use Ender 2 example from Marlin team as base configuration
-        use_example_configs ${MARLIN_VERSION} Creality/Ender-2
-
+        use_example_configs ${MARLIN_VERSION} ${PRINTER_MODEL}
+    
+    - name: Build
+      run: |
+       	platformio run -e ${TARGET_ENV}
