@@ -64,5 +64,6 @@ jobs:
     
     - name: Build
       run: |
+        cd "${GITHUB_WORKSPACE}/tag/${MARLIN_VERSION}"
         platformio run -e ${TARGET_ENV}
         
