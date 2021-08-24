@@ -36,6 +36,7 @@ jobs:
         BUILDROOT_BIN: "${{ github.workspace }}/tag/${{ env.MARLIN_VERSION }}/buildroot/bin"
       run: |
         chmod +x ${BUILDROOT_BIN}/*
+        echo "${BUILDROOT_BIN}" >> $GITHUB_PATH
 
     - name: Select Python 3.7
       uses: actions/setup-python@v2
@@ -58,5 +59,5 @@ jobs:
         BUILDROOT_BIN: "${{ github.workspace }}/tag/${{ env.MARLIN_VERSION }}/buildroot/bin"
       run: |
         # use Ender 2 example from Marlin team as base configuration
-        ${BUILDROOT_BIN}/use_example_configs ${{ env.MARLIN_VERSION }} Creality/Ender-2
+        use_example_configs ${{ env.MARLIN_VERSION }} Creality/Ender-2
 
