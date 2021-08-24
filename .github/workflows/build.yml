@@ -58,5 +58,5 @@ jobs:
         BUILDROOT_BIN: "${{ github.workspace }}/tag/${{ env.MARLIN_VERSION }}/buildroot/bin"
       run: |
         # use Ender 2 example from Marlin team as base configuration
-        ${BUILDROOT_BIN}/use_example_configs ${env.MARLIN_VERSION} Creality/Ender-2
+        ${BUILDROOT_BIN}/use_example_configs ${{ env.MARLIN_VERSION }} Creality/Ender-2
 
