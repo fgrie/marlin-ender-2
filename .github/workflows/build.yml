@@ -2,7 +2,7 @@
 
 name: CI
 env:
-  MARLIN_VERSION: "2.0.9.1"
+  MARLIN_VERSION: "2.0.9.3"
   PRINTER_MODEL: "Creality/Ender-2"
   TARGET_ENV: "melzi_optiboot_optimized"
   
