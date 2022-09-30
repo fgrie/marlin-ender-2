@@ -4,7 +4,6 @@ name: CI
 env:
   MARLIN_VERSION: "2.1.1"
   PRINTER_MODEL: "Creality/Ender-2"
-  TARGET_ENV: "melzi_optiboot_optimized"
   
 # Controls when the workflow will run
 on:
@@ -73,5 +72,6 @@ jobs:
     - name: Build
       run: |
         cd "${GITHUB_WORKSPACE}/tag/${MARLIN_VERSION}"
-        platformio run -e ${TARGET_ENV}
+        platformio run -e "melzi_optimized"
+        platformio run -e "melzi_optiboot_optimized"
         
