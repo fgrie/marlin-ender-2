@@ -60,7 +60,7 @@ jobs:
       run: |
         cd "${GITHUB_WORKSPACE}/tag/${MARLIN_VERSION}"
         # use Ender 2 example from Marlin team as base configuration
-        buildroot/bin/use_example_configs "${MARLIN_VERSION}" "${PRINTER_MODEL}"
+        use_example_configs "${MARLIN_VERSION}" "${PRINTER_MODEL}"
         
     - name: Debug output of folder structure
       run: |
