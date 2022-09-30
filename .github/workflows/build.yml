@@ -31,7 +31,7 @@ jobs:
     
     - name: Debug output of folder structure
       run: |
-        tree -d ${GITHUB_WORKSPACE}
+        tree ${GITHUB_WORKSPACE}
 
     - name: Enable buildroot commands
       env:
